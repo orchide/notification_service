@@ -23,6 +23,9 @@ Please contact author for env vars .
  git clone https://github.com/orchide/notification_service.git
 ```
  ```sh
+ put your environment variable here : notification_service/config/config.env
+```
+ ```sh
  cd users / npm install
 ```
  ```sh
