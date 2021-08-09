@@ -1,0 +1,39 @@
+version: '3.9'
+services:
+  
+
+  
+  users:
+    build: './users'
+    restart: always
+    ports: 
+      - 8080:8080
+    volumes:
+      -  /usr/src/app/node_modules
+      - ./users:/usr/src/app
+
+
+
+  
+  notification:
+    build: './notification_service'
+    depends_on: 
+      - redis
+      - users
+    ports: 
+      - 3000:3000
+    volumes: 
+      -  /usr/src/app/node_modules
+      - ./notification_service:/usr/src/app
+
+  redis:
+    image: 'redis'  
+
+
+
+
+
+
+
+
+
